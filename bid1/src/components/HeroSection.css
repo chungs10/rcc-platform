@@ -20,7 +20,7 @@ video {
   }
 
   #aboutUsLink:hover {
-    border-bottom: 3px solid rgba(255, 44, 44, 1);
+    border-bottom: 3px solid #007bff;
   }
   
   .hero-container {

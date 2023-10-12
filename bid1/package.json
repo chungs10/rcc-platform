@@ -22,6 +22,7 @@
     "nodemon": "^2.0.22",
     "react": "^18.2.0",
     "react-big-calendar": "^1.6.9",
+    "react-calendar": "^4.6.0",
     "react-datepicker": "^4.12.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.11.2",

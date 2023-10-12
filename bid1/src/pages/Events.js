@@ -1,11 +1,10 @@
 import React from 'react';
-import Calendar from '../components/Calendar'
+import CalendarComp from '../components/CalendarComp'
 
 function Events() {
   return (
     <>
-        <h1>Events</h1>
-        <Calendar />
+        <CalendarComp />
     </>
   );
 }
