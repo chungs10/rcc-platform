@@ -1,38 +1,13 @@
-.calendar {
-    text-align: center;
-    max-width: 400px;
-    margin: 0 auto;
-  }
-  
-  .calendar-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
-  }
-  
-  .calendar-day {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 2.5rem;
-    height: 2.5rem;
-    margin: 0.2rem;
-    border: 1px solid #ccc;
-    cursor: pointer;
-  }
-  
-  .calendar-day.selected {
-    background-color: #007bff;
-    color: #fff;
-  }
-  
-  .calendar-weekday {
-    font-weight: bold;
-    width: 2.5rem;
-    height: 2.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
+/* custom-calendar-styles.css */
+
+.custom-event-class {
+  background-color: red;
+  color: white;
+  /* Add any other styles you want to apply to event elements */
+}
+
+.custom-day-header {
+  background-color: blue;
+  color: white;
+  /* Add any other styles you want to apply to day header elements */
+}
