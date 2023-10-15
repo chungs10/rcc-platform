@@ -142,13 +142,15 @@
 
 #heroSectionLink {
   text-decoration: none;
-  color: black;
+  color: white;
   font-size: 20px;
-  border-bottom: 3px solid rgba(0, 0, 1, 1);
+  background-color: #6f48eb;
+  padding: 10px 25px;
+  border-radius: 15px;
   transition: 0.2s ease-in-out;
 }
 
 #heroSectionLink:hover {
-  border-bottom: 3px solid #007bff;
+  background-color: #5031b4;
 }
 

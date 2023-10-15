@@ -17,10 +17,13 @@ video {
     font-size: 30px;
     border-bottom: 3px solid rgba(23, 195, 178, 0);
     transition: 0.2s ease-in-out;
+    background-color: #6f48eb;
+    padding: 10px 15px;
+    border-radius: 15px;
   }
 
   #aboutUsLink:hover {
-    border-bottom: 3px solid #007bff;
+    background-color: #5031b4;
   }
   
   .hero-container {
