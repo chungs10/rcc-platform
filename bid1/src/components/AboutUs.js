@@ -39,7 +39,9 @@ function AboutUs() {
                     </li> */}
                 </ul>
             </div>
-            <a id="heroSectionLink" href="#">Back to Top</a>
+            <div className='linkContainer'>
+                <a id="heroSectionLink" href="#">Back to Top</a>
+            </div>
         </div>
     </section>
   );
