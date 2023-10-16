@@ -25,7 +25,9 @@
 
   .content-paragraph {
     width: 40vw;
+    height: 25vh;
     margin: 50px 0px 0px 0px;
+    overflow: auto;
   }
   
   .support-form {
@@ -37,10 +39,6 @@
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Increased box shadow */
     background-color: #fff;
     height: 85vh;
-  }
-  
-  .form-header {
-    margin-bottom: 10vh; /* Increased margin */
   }
   
   form {
@@ -64,13 +62,13 @@
   
   .supportPageButton {
     font-size: 25px;
-    padding: 20px 25px; /* Increased padding */
+    padding: 15px 20px; /* Increased padding */
     background-color: #6f48eb;
     color: #fff;
     border: none;
     border-radius: 15px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: 0.3s;
     margin: 10px 0px;
   }
   

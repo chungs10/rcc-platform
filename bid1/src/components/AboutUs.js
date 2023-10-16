@@ -19,7 +19,7 @@ function AboutUs() {
                 <ul className="wrapper">
                     <li className="icon github">
                         <span className="tooltip">GitHub</span>
-                        <span className="gitHubSpan"><a href="https://github.com/Benny787/Taplen" target="_blank"><i id="gitHubIcon" className="fab fa-github"></i></a></span>
+                        <span className="gitHubSpan"><a href="https://github.com/Benny787" target="_blank"><i id="gitHubIcon" className="fab fa-github"></i></a></span>
                     </li>
                     <li className="icon discord">
                         <span className="tooltip">Discord</span>

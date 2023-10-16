@@ -1,6 +1,6 @@
 .main {
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: fit-content;
     display: flex;
     justify-content: center;
 }
@@ -19,14 +19,17 @@
 .headerSection {
     /* text-align: left; */
     margin-bottom: 2vh;
-    background-color: aliceblue;
-    border-bottom: 2px solid black;
-    height: 20vh;
-    width: 70vw;
+    border: 2px solid #ccc; /* Increased border size */
+    border-radius: 15px; /* Increased border radius */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Increased box shadow */
+    background-color: #fff;
+    width: 76vw;
+    overflow: auto;
 }
 
 .socialHeaderSection {
   height: 23vh;
+  margin-bottom: 3vh;
 }
 
 .gitHubSpan a {
@@ -146,6 +149,7 @@
   font-size: 20px;
   background-color: #6f48eb;
   padding: 10px 25px;
+  margin-bottom: 5vh;
   border-radius: 15px;
   transition: 0.2s ease-in-out;
 }

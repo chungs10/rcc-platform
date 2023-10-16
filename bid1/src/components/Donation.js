@@ -17,7 +17,7 @@ function Donation() {
         </div>
         <div className='support-form'>
           <form>
-            <h1 className='form-header'>Donate Below</h1>
+            <h1 className='support-form-header'>Donate Below</h1>
 
             <button className='supportPageButton' type='submit'>$5</button>
             <button className='supportPageButton' type='submit'>$10</button>
