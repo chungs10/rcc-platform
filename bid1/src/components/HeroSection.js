@@ -7,7 +7,6 @@ function HeroSection() {
   return (
     <div className='hero-container'>
       <h1>Welcome to the RCC Website</h1>
-      <p></p>
       <a id="aboutUsLink" href="#aboutUsSection">Learn more</a>
     </div>
   );
