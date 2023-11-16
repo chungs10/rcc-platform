@@ -1,5 +1,5 @@
 {
-    "movies": [
+    "CTF": [
      {
       "title": "Finders Keepers",
       "problem": "Patch found a flag! He stored it in his home directory... should be able to keep it?",
@@ -39,123 +39,76 @@
     },
     {
         "title": "Rusty",
-        "problem": "We heard you were a bit rusty on the basics… so here’s a small warmups challenge for you!\n\nsome code attached and its output. Can you make any sense of it?\n\nOPhMOnVheP1hRaOa1Pmi1GrBbGm21PRaepxXOPxMeG1iOaYd1ji=",
-        "Connect": "http://challenge.ctf.games:30114",
-        "solution": "To solve this exercise , I used the following code:",
+        "problem": "We heard you were a bit rusty on the basics... so here's a small warmups challenge for you!\n\nsome code attached and its output. Can you make any sense of it?\n\nOPhMOnVheP1hRaOa1Pmi1GrBbGm21PRaepxXOPxMeG1iOaYd1ji=",
+        "Connect": "",
+        "solution": "To solve this exercise , I used the following code: ",
         "links": [
          {
           "link": "http://challenge.ctf.games:31512/.well-known/security.txt"
          }
         ],
-        "answer":"flag{7b2bf7ec022acbddb0a75a362f4ce8ff}"
+        "answer":"flag{12f166cbb4a5b922bcc0adfaa164f46a}"
     },
     {
         "title": "Jolt",
-        "problem": "We heard you were a bit rusty on the basics… so here’s a small warmups challenge for you!\n\nsome code attached and its output. Can you make any sense of it?\n\nOPhMOnVheP1hRaOa1Pmi1GrBbGm21PRaepxXOPxMeG1iOaYd1ji=",
-        "Connect": "http://challenge.ctf.games:30114",
-        "solution": "To solve this exercise , I used the following code:",
+        "problem": "Jott is the new hottness of productivity applications! Collaborate in real time, share notes, take notes, or don't take notes! We're not your manager. We're not even a real company!\n\nGo ahead and pentest the application and jott down whatever you find.\n\nWe'd like you to do a pretty thorough job, so we've outfitted you with a dev instane of the app. Please use these user level credentials to log in and perform an aunthenticated test.\n\nUsername- john_doePassword - password123\n\nWe also gave you the dev-build of the app in the src directory for reference.",
+        "Connect": "",
+        "solution": "To get the token of the website I used the following code: Then, I modified the jwt value with the value we generated: Once, we enter as a admin we can get the flag:",
         "links": [
          {
           "link": "http://challenge.ctf.games:31512/.well-known/security.txt"
          }
         ],
-        "answer":"flag{7b2bf7ec022acbddb0a75a362f4ce8ff}"
+        "answer":"flag{c7cc7fa86330cff2c09cea0055289b7e}"
     },
     {
         "title": "Quick Maths",
-        "problem": "We heard you were a bit rusty on the basics… so here’s a small warmups challenge for you!\n\nsome code attached and its output. Can you make any sense of it?\n\nOPhMOnVheP1hRaOa1Pmi1GrBbGm21PRaepxXOPxMeG1iOaYd1ji=",
-        "Connect": "http://challenge.ctf.games:30114",
-        "solution": "To solve this exercise , I used the following code:",
+        "problem": "To try and get better grades in math, I made a program that gave me timed quizzes. Funny thing is that as I got better at the questions in this test, I got worse grades on my math tests.\n\nNOTE: Float answers are rounded to 1 decimal points.\nNOTE: And here’s another twist… the answers to division questions depend on integer division or double division. I.e.,\n3/5 = 0\n3/5.0 = .6",
+        "Connect": "",
+        "solution": "To solve this exercise, we need to use the following code: Then, we run our script:",
         "links": [
          {
           "link": "http://challenge.ctf.games:31512/.well-known/security.txt"
          }
         ],
-        "answer":"flag{7b2bf7ec022acbddb0a75a362f4ce8ff}"
+        "answer":"flag{77ba0346d9565e77344b9fe40ecf1369}"
     },
     {
         "title": "Back the Hawks",
-        "problem": "We heard you were a bit rusty on the basics… so here’s a small warmups challenge for you!\n\nsome code attached and its output. Can you make any sense of it?\n\nOPhMOnVheP1hRaOa1Pmi1GrBbGm21PRaepxXOPxMeG1iOaYd1ji=",
+        "problem": "We are Back the Hawks! We’re a non-profit that seeks to protect hawks across the world. We have a vibrant community of Backers who are all passionate about Backing the Hawks! We’d love for you to join us… if you can figure out how to get an access code.\n\nNOTE — any resemblence to other companies, non-profits, services, login portal challenges, and/or the like, living or dead, is completely coincidental.\n\nHint: The JavaScript of this page is doing something interesting.",
         "Connect": "http://challenge.ctf.games:30114",
-        "solution": "To solve this exercise , I used the following code:",
+        "solution": "I exanimated the website to check the JavaScript code: According to the javascript , I need to make a post:Then, I got a encrypted message:\n\nCaesar cipher: Output: WE_OUT_HERE_BACKIN_THE_HAWKS_2023\n\nOnce, we get our access code, we can enter in the website:",
         "links": [
          {
           "link": "http://challenge.ctf.games:31512/.well-known/security.txt"
          }
         ],
-        "answer":"flag{7b2bf7ec022acbddb0a75a362f4ce8ff}"
+        "answer":"flag{3ef532159716ecfb9117f56f4ead4fb6}"
     },
     {
         "title": "Unhackable Andy",
-        "problem": "We heard you were a bit rusty on the basics… so here’s a small warmups challenge for you!\n\nsome code attached and its output. Can you make any sense of it?\n\nOPhMOnVheP1hRaOa1Pmi1GrBbGm21PRaepxXOPxMeG1iOaYd1ji=",
-        "Connect": "http://challenge.ctf.games:30114",
-        "solution": "To solve this exercise , I used the following code:",
+        "problem": "Someone might want to let ol’ Andy know the old addage — pride goeth before the fall.",
+        "Connect": "",
+        "solution": "To solve this exercise , we need to access to the login.\n\nThe exercise provided us the repository:\n\nAfter we exanimated we can find the credential to access to the page:\n\nOnce, we access to the page , we can see a command output:\n\nWe only need to do simple Linux commands:\n\nls\n\ncat flag.txt",
         "links": [
          {
           "link": "http://challenge.ctf.games:31512/.well-known/security.txt"
          }
         ],
-        "answer":"flag{7b2bf7ec022acbddb0a75a362f4ce8ff}"
+        "answer":"flag{e81b8885d8a5e8d57bbadeb124cc956b}"
     },
     {
         "title": "Protecting Camp",
-        "problem": "We heard you were a bit rusty on the basics… so here’s a small warmups challenge for you!\n\nsome code attached and its output. Can you make any sense of it?\n\nOPhMOnVheP1hRaOa1Pmi1GrBbGm21PRaepxXOPxMeG1iOaYd1ji=",
-        "Connect": "http://challenge.ctf.games:30114",
-        "solution": "To solve this exercise , I used the following code:",
+        "problem": "I made a small site to keep a list of things I need to buy to keep me safe before I go camping, maybe it’s keeping some other things safe too!\n\nPsst… Snyk can help solve this challenge! Try it out!",
+        "Connect": "",
+        "solution": "We need to find the vulnerability using Synk: Then, we checked the code:This is the vulnerable part of the code that we are going to exploit.\n\nUse burpsuit:\n\nModify the request.\n\nLaunch the request:",
         "links": [
          {
           "link": "http://challenge.ctf.games:31512/.well-known/security.txt"
          }
         ],
-        "answer":"flag{7b2bf7ec022acbddb0a75a362f4ce8ff}"
-    },
-    {
-        "title": "Quick Maths",
-        "problem": "We heard you were a bit rusty on the basics… so here’s a small warmups challenge for you!\n\nsome code attached and its output. Can you make any sense of it?\n\nOPhMOnVheP1hRaOa1Pmi1GrBbGm21PRaepxXOPxMeG1iOaYd1ji=",
-        "Connect": "http://challenge.ctf.games:30114",
-        "solution": "To solve this exercise , I used the following code:",
-        "links": [
-         {
-          "link": "http://challenge.ctf.games:31512/.well-known/security.txt"
-         }
-        ],
-        "answer":"flag{7b2bf7ec022acbddb0a75a362f4ce8ff}"
-    },
-    {
-        "title": "Quick Maths",
-        "problem": "We heard you were a bit rusty on the basics… so here’s a small warmups challenge for you!\n\nsome code attached and its output. Can you make any sense of it?\n\nOPhMOnVheP1hRaOa1Pmi1GrBbGm21PRaepxXOPxMeG1iOaYd1ji=",
-        "Connect": "http://challenge.ctf.games:30114",
-        "solution": "To solve this exercise , I used the following code:",
-        "links": [
-         {
-          "link": "http://challenge.ctf.games:31512/.well-known/security.txt"
-         }
-        ],
-        "answer":"flag{7b2bf7ec022acbddb0a75a362f4ce8ff}"
-    },
-    {
-        "title": "Quick Maths",
-        "problem": "We heard you were a bit rusty on the basics… so here’s a small warmups challenge for you!\n\nsome code attached and its output. Can you make any sense of it?\n\nOPhMOnVheP1hRaOa1Pmi1GrBbGm21PRaepxXOPxMeG1iOaYd1ji=",
-        "Connect": "http://challenge.ctf.games:30114",
-        "solution": "To solve this exercise , I used the following code:",
-        "links": [
-         {
-          "link": "http://challenge.ctf.games:31512/.well-known/security.txt"
-         }
-        ],
-        "answer":"flag{7b2bf7ec022acbddb0a75a362f4ce8ff}"
-    },
-     {
-      "name": "Schindler's List",
-      "url": "https://parsehub.com/sandbox/moviedetails?movie=Schindler%27s%20List",
-      "IMAX": "06:15 PM",
-      "rating": "8 . 9",
-      "character": [
-       {
-        "name": "Oskar Schindler",
-        "actor": "Liam Neeson"
-       }
-      ]
-     }
+        "answer":"flag{d716dd8ab70bbc51a5f1d0182c84bcc8}"
+    }
+    
     ]
    }
