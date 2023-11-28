@@ -13,13 +13,17 @@ app.use(bodyParser.json());
 // MongoDB Connection
 (async () => {
   try {
-    await mongoose.connect('mongodb+srv://krumpp:M1TRRCC@rcc-cluster.h5eohrh.mongodb.net/');
+    await mongoose.connect('mongodb+srv://krumpp:M1TRRCC@rcc-cluster.h5eohrh.mongodb.net/RCC-Bid-2', {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
 
     console.log('Connected to MongoDB');
 
     // Define a MongoDB schema
-    const itemSchema = new mongoose.Schema({
-        CTF: {
+    const ctfSchema = new mongoose.Schema({
+      CTF: [
+        {
           title: String,
           problem: String,
           Connect: String,
@@ -31,61 +35,61 @@ app.use(bodyParser.json());
           ],
           answer: String,
         },
-      });
-  
-      // Model for the Bid-2 collection
-      const Bid2 = mongoose.model('Bid-2', itemSchema);
+      ],
+    });
 
+    // Model for the bid-2 collection
+    const CTFModel = mongoose.model('Bid-2', ctfSchema);
 
     // Routes
-    app.post('/api/items', async (req, res) => {
-        try {
-          const newItem = new Bid2(req.body);  
-          const savedItem = await newItem.save();
-          res.json(savedItem);
-        } catch (error) {
-          res.status(500).json({ error: error.message });
-        }
-      });
-      
-      app.get('/api/items/:title', async (req, res) => {
-        const title = req.params.title;
-    
-        try {
-            const query = {};
-            query[`CTF.${title}`] = { $exists: true };
-            const challenge = await Bid2.findOne(query);
-    
-            console.log('Title:', title);
-            console.log('MongoDB Query Result:', challenge);
-    
-            if (!challenge) {
-                return res.status(404).json({ message: 'Item not found' });
-            }
-    
-            res.json(challenge.CTF);
-        } catch (error) {
-            console.error(error);
-            res.status(500).json({ message: 'Internal server error' });
-        }
-    });
-    
-      
-      
-      
-    app.put('/api/items/:id', async (req, res) => {
+    app.post('/api/ctf', async (req, res) => {
       try {
-        const updatedItem = await Bid2.findByIdAndUpdate(req.params.id, req.body, { new: true });
-        res.json(updatedItem);
+        const newCTFEntry = new CTFModel(req.body);
+        const savedCTFEntry = await newCTFEntry.save();
+        console.log('Saved CTF Entry:', savedCTFEntry);
+        res.json(savedCTFEntry);
+      } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: error.message });
+      }
+    });
+
+    app.get('/api/ctf', async (req, res) => {
+      try {
+        const allCTFEntries = await CTFModel.find({});
+        res.json(allCTFEntries);
+      } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Internal server error' });
+      }
+    });
+
+    app.get('/api/ctf/:id', async (req, res) => {
+      try {
+        const ctfEntry = await CTFModel.findById(req.params.id);
+        res.json(ctfEntry);
       } catch (error) {
         res.status(500).json({ error: error.message });
       }
     });
 
-    app.delete('/api/items/:id', async (req, res) => {
+    app.put('/api/ctf/:id', async (req, res) => {
       try {
-        const deletedItem = await Bid2.findByIdAndRemove(req.params.id);
-        res.json(deletedItem);
+        const updatedCTFEntry = await CTFModel.findByIdAndUpdate(
+          req.params.id,
+          req.body,
+          { new: true }
+        );
+        res.json(updatedCTFEntry);
+      } catch (error) {
+        res.status(500).json({ error: error.message });
+      }
+    });
+
+    app.delete('/api/ctf/:id', async (req, res) => {
+      try {
+        const deletedCTFEntry = await CTFModel.findByIdAndRemove(req.params.id);
+        res.json(deletedCTFEntry);
       } catch (error) {
         res.status(500).json({ error: error.message });
       }
@@ -93,14 +97,14 @@ app.use(bodyParser.json());
 
     // Default route handler for the root path
     app.get('/', (req, res) => {
-        res.send('Server is running. Use /api/items to interact with the API.');
-      });
-  
-      // Start the server
-      app.listen(port, () => {
-        console.log(`Server is running on http://localhost:${port}`);
-      });
-    } catch (error) {
-      console.error('Error connecting to MongoDB:', error.message);
-    }
+      res.send('Server is running. Use /api/ctf to interact with the API.');
+    });
+
+    // Start the server
+    app.listen(port, () => {
+      console.log(`Server is running on http://localhost:${port}`);
+    });
+  } catch (error) {
+    console.error('Error connecting to MongoDB:', error.message);
+  }
 })();
