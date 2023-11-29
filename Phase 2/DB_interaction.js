@@ -86,6 +86,28 @@ app.use(bodyParser.json());
       }
     });
 
+    app.get('/api/ctf/:title/:section', async (req, res) => {
+        const ctfTitle = req.params.title;
+        const section = req.params.section;
+      
+        try {
+          const ctfEntry = await CTFModel.findOne(
+            { title: ctfTitle },
+            { [section]: 1 } // Projection to include only the specified section
+          );
+      
+          if (!ctfEntry) {
+            return res.status(404).json({ message: 'CTF entry not found' });
+          }
+      
+          res.json({ [section]: ctfEntry[section] });
+        } catch (error) {
+          console.error('Error in /api/ctf/:title/:section route:', error);
+          res.status(500).json({ message: 'Internal server error', error: error.message });
+        }
+      });
+      
+
     // PUT request to update a specific CTF entry by title
     app.put('/api/ctf/:title', async (req, res) => {
       try {
