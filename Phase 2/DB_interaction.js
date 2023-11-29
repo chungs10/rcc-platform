@@ -22,38 +22,42 @@ app.use(bodyParser.json());
 
     // Define a MongoDB schema
     const ctfSchema = new mongoose.Schema({
-      CTF: [
+      _id: mongoose.Schema.Types.ObjectId,
+      title: String,
+      problem: String,
+      Connect: String,
+      solution: String,
+      links: [
         {
-          title: String,
-          problem: String,
-          Connect: String,
-          solution: String,
-          links: [
-            {
-              link: String,
-            },
-          ],
-          answer: String,
+          link: String,
         },
       ],
+      answer: String,
     });
 
     // Model for the bid-2 collection
     const CTFModel = mongoose.model('Bid-2', ctfSchema);
 
     // Routes
+    // POST request to add a new CTF entry
     app.post('/api/ctf', async (req, res) => {
-      try {
-        const newCTFEntry = new CTFModel(req.body);
-        const savedCTFEntry = await newCTFEntry.save();
-        console.log('Saved CTF Entry:', savedCTFEntry);
-        res.json(savedCTFEntry);
-      } catch (error) {
-        console.error(error);
-        res.status(500).json({ error: error.message });
-      }
-    });
+        try {
+          const newCTFEntry = new CTFModel({
+            _id: new mongoose.Types.ObjectId(), // Generate a new ObjectId
+            ...req.body,
+          });
+      
+          const savedCTFEntry = await newCTFEntry.save();
+          console.log('Saved CTF Entry:', savedCTFEntry);
+          res.json(savedCTFEntry);
+        } catch (error) {
+          console.error(error);
+          res.status(500).json({ error: error.message });
+        }
+      });
+      
 
+    // GET request to retrieve all CTF entries
     app.get('/api/ctf', async (req, res) => {
       try {
         const allCTFEntries = await CTFModel.find({});
@@ -64,36 +68,58 @@ app.use(bodyParser.json());
       }
     });
 
-    app.get('/api/ctf/:id', async (req, res) => {
+    // GET request to retrieve a specific CTF entry by title
+    app.get('/api/ctf/:title', async (req, res) => {
+      const ctfTitle = req.params.title;
+
       try {
-        const ctfEntry = await CTFModel.findById(req.params.id);
+        const ctfEntry = await CTFModel.findOne({ title: ctfTitle });
+
+        if (!ctfEntry) {
+          return res.status(404).json({ message: 'CTF entry not found' });
+        }
+
         res.json(ctfEntry);
       } catch (error) {
-        res.status(500).json({ error: error.message });
+        console.error('Error in /api/ctf/:title route:', error);
+        res.status(500).json({ message: 'Internal server error', error: error.message });
       }
     });
 
-    app.put('/api/ctf/:id', async (req, res) => {
+    // PUT request to update a specific CTF entry by title
+    app.put('/api/ctf/:title', async (req, res) => {
       try {
-        const updatedCTFEntry = await CTFModel.findByIdAndUpdate(
-          req.params.id,
-          req.body,
+        const updatedCTFEntry = await CTFModel.findOneAndUpdate(
+          { title: req.params.title },
+          { $set: req.body },
           { new: true }
         );
+
+        if (!updatedCTFEntry) {
+          return res.status(404).json({ message: 'CTF entry not found' });
+        }
+
         res.json(updatedCTFEntry);
       } catch (error) {
         res.status(500).json({ error: error.message });
       }
     });
 
-    app.delete('/api/ctf/:id', async (req, res) => {
-      try {
-        const deletedCTFEntry = await CTFModel.findByIdAndRemove(req.params.id);
-        res.json(deletedCTFEntry);
-      } catch (error) {
-        res.status(500).json({ error: error.message });
+// DELETE request to remove a specific CTF entry by title
+app.delete('/api/ctf/:title', async (req, res) => {
+    try {
+      const deletedCTFEntry = await CTFModel.findOneAndDelete({ title: req.params.title });
+  
+      if (!deletedCTFEntry) {
+        return res.status(404).json({ message: 'CTF entry not found' });
       }
-    });
+  
+      res.json(deletedCTFEntry);
+    } catch (error) {
+      res.status(500).json({ error: error.message });
+    }
+  });
+  
 
     // Default route handler for the root path
     app.get('/', (req, res) => {
