@@ -2,9 +2,6 @@
 
 A comprehensive full-stack development project for the Rensselaer Cybersecurity Collaboratory (RCC). The goal was to solve three core problems: no public-facing presence, no centralized knowledge base for CTF write-ups, and a lack of an interactive front-end for challenges.
 
-## 🚀 Live Demo
-[If the site is still live, add a link here]
-
 ## 🛠 Tech Stack
 *   *Frontend:* React, Bootstrap
 *   *Backend:* Node.js, Express.js
