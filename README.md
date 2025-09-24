@@ -12,8 +12,7 @@ A comprehensive full-stack development project for the Rensselaer Cybersecurity 
 ## ✨ Key Features
 *   *Public Website:* Showcased RCC's achievements, faculty/student profiles, events, and an alumni engagement portal.
 *   *CTF Knowledge Base:* A secure system for authorized users to Create, Read, Update, and Delete (CRUD) CTF write-ups.
-*   *Secure Authentication:* Integrated with RPI's CAS system for secure and familiar login for students.
-*   *Accessibility Compliant:* rigorously tested with screen readers and tools like Wave to meet accessibility standards.
+
 
 ## 📊 My Contributions
 *   *Full-Stack Development:* Contributed to both front-end and back-end development across the project's features.
