@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
@@ -13,7 +14,7 @@ app.use(bodyParser.json());
 // MongoDB Connection
 (async () => {
   try {
-    await mongoose.connect('mongodb+srv://krumpp:M1TRRCC@rcc-cluster.h5eohrh.mongodb.net/RCC-Bid-2', {
+    await mongoose.connect(process.env.MONGODB_URI, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });

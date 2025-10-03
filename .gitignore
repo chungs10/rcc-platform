@@ -1,2 +1,6 @@
 
 Project Documents/~$TR Initial Sections.docx
+node_modules/
+.env
+*.log
+.DS_Store
