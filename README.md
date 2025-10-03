@@ -4,7 +4,7 @@
 ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
 ![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
 
-A full-stack web application developed for the Rensselaer Cybersecurity Collaboratory (RCC) to establish a public-facing website and Capture The Flag (CTF) management system. The platform addresses three core requirements: a public website, a centralized CTF write-up repository, and an interactive challenge management interface. 
+A web application developed for the Rensselaer Cybersecurity Collaboratory (RCC) to establish a public-facing website and Capture The Flag (CTF) management system. The platform addresses three core requirements: a public website, a centralized CTF write-up repository, and an interactive challenge management interface. 
 
 ## Features
 
@@ -25,7 +25,7 @@ A full-stack web application developed for the Rensselaer Cybersecurity Collabor
 ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
 ![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
 
-A full-stack web application developed for the Rensselaer Cybersecurity Collaboratory (RCC) to establish a public-facing website and Capture The Flag (CTF) management system. The platform addresses three core requirements: a public website, a centralized CTF write-up repository, and an interactive challenge management interface. 
+A web application developed for the Rensselaer Cybersecurity Collaboratory (RCC) to establish a public-facing website and Capture The Flag (CTF) management system. The platform addresses three core requirements: a public website, a centralized CTF write-up repository, and an interactive challenge management interface. 
 
 ## Features
 
