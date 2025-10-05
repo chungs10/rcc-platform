@@ -67,6 +67,7 @@ npm start
 
 
 ## Project Structure
+```plaintext
 rcc-platform/
 ├── Project Documents/          # Planning & documentation
 ├── rcc-website/                # React frontend (Public Website)
@@ -80,6 +81,7 @@ rcc-platform/
 ├── rcc-ctf-frontend/           # CTF interface wireframes
 ├── LICENSE
 └── README.md
+```
 
 
 ## Team & Contributions
